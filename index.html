@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💜 Untuk Agita Apriliani Putri Ramdan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Partikel bintang latar */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+
+        /* Kontainer utama */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* Bingkai mewah */
+        .luxury-frame {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 20px;
+            padding: 50px 30px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                0 0 40px rgba(212, 175, 55, 0.1),
+                inset 0 0 30px rgba(212, 175, 55, 0.05);
+            animation: fadeInUp 1.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hiasan sudut emas */
+        .corner-decoration {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 2px solid #d4af37;
+        }
+
+        .top-left {
+            top: 15px;
+            left: 15px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .top-right {
+            top: 15px;
+            right: 15px;
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .bottom-left {
+            bottom: 15px;
+            left: 15px;
+            border-right: none;
+            border-top: none;
+        }
+
+        .bottom-right {
+            bottom: 15px;
+            right: 15px;
+            border-left: none;
+            border-top: none;
+        }
+
+        /* Judul utama */
+        h1 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            color: #d4af37;
+            margin-bottom: 10px;
+            letter-spacing: 4px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #d4af37, 0 0 20px #d4af37, 0 0 30px #b8941f;
+            }
+            to {
+                text-shadow: 0 0 15px #d4af37, 0 0 30px #d4af37, 0 0 50px #b8941f, 0 0 70px #9a7d18;
+            }
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #e0c97c;
+            margin-bottom: 40px;
+            font-style: italic;
+            animation: fadeIn 2s ease-in forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Foto profil */
+        .photo-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 40px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .photo-ring {
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            width: 216px;
+            height: 216px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #d4af37, #f4e4a6, #d4af37, #b8941f);
+            background-size: 400% 400%;
+            animation: rotateGradient 6s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes rotateGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #1a1a2e;
+        }
+
+        /* Kotak pesan */
+        .message-box {
+            background: rgba(212, 175, 55, 0.05);
+            border-left: 3px solid #d4af37;
+            border-right: 3px solid #d4af37;
+            padding: 30px 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+            position: relative;
+            animation: pulseBorder 3s ease-in-out infinite;
+        }
+
+        @keyframes pulseBorder {
+            0%, 100% {
+                box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+            }
+        }
+
+        .message-text {
+            color: #f0e6c8;
+            font-size: 1.05rem;
+            line-height: 2;
+            text-align: justify;
+        }
+
+        .message-text p {
+            margin-bottom: 15px;
+        }
+
+        /* Daftar pujian */
+        .praise-section {
+            margin: 50px 0;
+        }
+
+        .praise-title {
+            font-size: 1.5rem;
+            color: #d4af37;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .praise-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+        }
+
+        .praise-item {
+            background: rgba(255, 255, 255, 0.03);
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 2px solid #d4af37;
+            color: #f5edd6;
+            font-size: 1rem;
+            transform: translateX(-20px);
+            opacity: 0;
+            animation: slideIn 1s ease-out forwards;
+            transition: all 0.3s ease;
+        }
+
+        .praise-item:hover {
+            background: rgba(212, 175, 55, 0.1);
+            transform: translateX(5px) !important;
+        }
+
+        @keyframes slideIn {
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Hati berkedip */
+        .heart {
+            font-size: 2.5rem;
+            color: #e63946;
+            margin: 30px 0;
+            animation: heartbeat 1.2s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.15); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.15); }
+        }
+
+        /* Tanda tangan */
+        .signature {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            color: #c4b68c;
+            font-style: italic;
+            font-size: 1rem;
+            animation: fadeIn 3s ease-in forwards;
+        }
+
+        /* Responsif */
+        @media (max-width: 600px) {
+            .luxury-frame { padding: 30px 15px; }
+            .message-text { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Latar bintang -->
+    <div class="stars" id="stars"></div>
+
+    <div class="container">
+        <div class="luxury-frame">
+            <!-- Hiasan sudut -->
+            <div class="corner-decoration top-left"></div>
+            <div class="corner-decoration top-right"></div>
+            <div class="corner-decoration bottom-left"></div>
+            <div class="corner-decoration bottom-right"></div>
+
+            <!-- Foto profil - ganti dengan foto kamu berdua -->
+            <div class="photo-container">
+                <div class="photo-ring"></div>
+                <img src="foto.jpg" alt="Agita Apriliani Putri Ramdan" class="photo" onerror="this.src='https://via.placeholder.com/200/1a1a2e/d4af37?text=💜'">
+            </div>
+
+            <h1>Agita Apriliani<br>Putri Ramdan</h1>
+            <p class="subtitle">✨ Seseorang yang sangat berharga ✨</p>
+
+            <div class="heart">🤍</div>
+
+            <!-- Pesan utama -->
+            <div class="message-box">
+                <div class="message-text">
+                    <p>Untuk Agita Apriliani Putri Ramdan,</p>
+                    
+                    <p>Di dunia yang penuh dengan milyaran manusia, aku bersyukur atas pertemuan kita. Kamu hadir bukan sekadar menjadi bagian dari hariku, tetapi menjadi alasan di balik senyumku dan ketenanganku.</p>
+                    
+                    <p>Kamu adalah anugerah terindah yang Tuhan kirimkan. Kehadiranmu membuat segala hal terasa lebih indah, lebih bermakna, dan lebih berwarna. Di mataku, kamu adalah definisi keindahan yang sesungguhnya — bukan hanya dari luar, tetapi hatimu yang tulus, senyummu yang menenangkan, dan caramu yang istimewa.</p>
+                    
+                    <p>Terima kasih telah ada, terima kasih telah menjadi dirimu. Tetaplah bersinar, karena bagi aku, cahayamu lebih terang dari bintang-bintang di langit sana. Semoga kita selalu bersama, saling melengkapi, dan tumbuh bersama dalam kebaikan dan kebahagiaan.</p>
+                    
+                    <p>Semoga setiap hari kamu merasa dicintai, dihargai, dan bahagia. Karena kamu pantas mendapatkan itu dan lebih dari itu.</p>
+                    
+                    <p>💜 Selamanya milikku, selamanya berharga.</p>
+                </div>
+            </div>
+
+            <!-- Daftar pujian -->
+            <div class="praise-section">
+                <h2 class="praise-title">✨ Mengapa Kamu Istimewa ✨</h2>
+                
+                <div class="praise-item" style="animation-delay: 0.2s;">
+                    💛 Kamu memiliki senyum yang mampu mencerahkan hari yang paling kelam sekalipun
+                </div>
+                <div class="praise-item" style="animation-delay: 0.4s;">
+                    💛 Hatimu begitu lembut dan tulus — sulit ditemukan yang sepertimu di dunia ini
+                </div>
+                <div class="praise-item" style="animation-delay: 0.6s;">
+                    💛 Kamu cerdas, berwawasan, dan selalu berusaha menjadi versi terbaik dari dirimu
+                </div>
+                <div class="praise-item" style="animation-delay: 0.8s;">
+                    💛 Caramu memandang dunia begitu indah, dan kamu mengajarkanku untuk melihat keindahan itu juga
+                </div>
+                <div class="praise-item" style="animation-delay: 1.0s;">
+                    💛 Kamu kuat, sabar, dan luar biasa — aku bangga bisa berada di sisimu
+                </div>
+                <div class="praise-item" style="animation-delay: 1.2s;">
+                    💛 Kehadiranmu adalah ketenangan, suaramu adalah kedamaian, dan kamu adalah rumah bagiku
+                </div>
+                <div class="praise-item" style="animation-delay: 1.4s;">
+                    💛 Di mataku, kamu sempurna — bukan tanpa celah, tetapi tak ada yang lebih berharga darimu
+                </div>
+            </div>
+
+            <div class="heart">🤍</div>
+
+            <!-- Tanda tangan -->
+            <div class="signature">
+                — Dibuat dengan tulus dan penuh kasih sayang<br>
+                Untuk Agita Apriliani Putri Ramdan<br>
+                💜 Selamanya & Selamanya 💜
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Buat efek bintang berkedip otomatis
+        const starsContainer = document.getElementById('stars');
+        const numStars = 120;
+
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            
+            const size = Math.random() * 3 + 1;
+            const posX = Math.random() * 100;
+            const posY = Math.random() * 100;
+            const delay = Math.random() * 3;
+            const duration = Math.random() * 2 + 2;
+            
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.left = `${posX}%`;
+            star.style.top = `${posY}%`;
+            star.style.animationDelay = `${delay}s`;
+            star.style.animationDuration = `${duration}s`;
+            
+            starsContainer.appendChild(star);
+        }
+    </script>
+</body>
+</html>
